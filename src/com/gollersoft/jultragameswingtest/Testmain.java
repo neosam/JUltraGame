@@ -1,6 +1,7 @@
 package com.gollersoft.jultragameswingtest;
 
 import com.gollersoft.jultragame.UG;
+import com.gollersoft.jultragame.UGStuffDelegate;
 import com.gollersoft.jultragame.display.UGColor;
 import com.gollersoft.jultragame.display.UGGraphics;
 import com.gollersoft.jultragame.display.UGImage;
@@ -25,7 +26,7 @@ public class Testmain {
         final JFrame frame = new JFrame("JUltraGame Test");
         final JPanel panel = (JPanel) ug.display.getElement();
         final Point position = new Point();
-        final UGImage img = ug.getImage("/home/neosam/IdeaProjects/JUltraGame/testimg.png");
+        final UGImage img = ug.getImage("testimg.png");
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {
             final UGColor black = new UGColor(0, 0, 0);
@@ -70,6 +71,13 @@ public class Testmain {
                 //To change body of implemented methods use File | Settings | File Templates.
             }
         });
+        ug.stuffDelegate = new UGStuffDelegate() {
+            @Override
+            public void frame() {
+                position.x--;
+            }
+        };
+
         frame.add(panel);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

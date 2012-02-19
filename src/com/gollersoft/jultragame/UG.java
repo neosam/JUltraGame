@@ -17,11 +17,17 @@ abstract public class UG {
     public final UGDisplay display;
     private UGKeyboardDelegate keyboardDelegate;
     public final UGKeycodeTranslation keycodeTranslation;
+    public UGStuffDelegate stuffDelegate;
 
     protected UG(UGDisplay display) {
         this.display = display;
         keycodeTranslation = new SwingKeycodeTranslation();
-
+        stuffDelegate = new UGStuffDelegate() {
+            @Override
+            public void frame() {
+                // nothing
+            }
+        };
     }
 
     public void setKeyboardDelgate(UGKeyboardDelegate delegate) {

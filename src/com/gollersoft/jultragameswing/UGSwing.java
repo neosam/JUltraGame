@@ -32,6 +32,7 @@ public class UGSwing extends UG {
                 try {
                     while (true) {
                         Thread.sleep(33);
+                        stuffDelegate.frame();
                         ((JPanel) display.getElement()).repaint();
                     }
                 } catch (InterruptedException e) {
