@@ -1,8 +1,8 @@
-package com.gollersoft.jultragameswing.display;
+package com.gollersoft.jultragame.binding.swing.display;
 
-import com.gollersoft.jultragame.display.UGColor;
-import com.gollersoft.jultragame.display.UGGraphics;
-import com.gollersoft.jultragame.display.UGImage;
+import com.gollersoft.jultragame.core.display.UGColor;
+import com.gollersoft.jultragame.core.display.UGGraphics;
+import com.gollersoft.jultragame.core.display.UGImage;
 
 import java.awt.*;
 

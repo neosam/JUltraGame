@@ -1,7 +1,7 @@
-package com.gollersoft.jultragameswing.display;
+package com.gollersoft.jultragame.binding.swing.display;
 
-import com.gollersoft.jultragame.display.UGDisplay;
-import com.gollersoft.jultragame.display.UGRenderDelegate;
+import com.gollersoft.jultragame.core.display.UGDisplay;
+import com.gollersoft.jultragame.core.display.UGRenderDelegate;
 
 /**
  * Created with IntelliJ IDEA.

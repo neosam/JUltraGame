@@ -1,7 +1,7 @@
-package com.gollersoft.jultragameswing.event;
+package com.gollersoft.swing.event;
 
-import com.gollersoft.jultragame.event.UGKeycode;
-import com.gollersoft.jultragame.event.UGKeycodeTranslation;
+import com.gollersoft.jultragame.core.event.UGKeycode;
+import com.gollersoft.jultragame.core.event.UGKeycodeTranslation;
 
 import java.awt.event.KeyEvent;
 

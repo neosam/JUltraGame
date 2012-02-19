@@ -1,11 +1,11 @@
-package com.gollersoft.jultragameswing;
+package com.gollersoft.jultragame.binding.swing;
 
-import com.gollersoft.jultragame.UG;
-import com.gollersoft.jultragame.display.UGImage;
-import com.gollersoft.jultragame.event.UGKeyEvent;
-import com.gollersoft.jultragame.event.UGKeyboardDelegate;
-import com.gollersoft.jultragameswing.display.SwingDisplay;
-import com.gollersoft.jultragameswing.display.SwingImage;
+import com.gollersoft.jultragame.core.UG;
+import com.gollersoft.jultragame.core.display.UGImage;
+import com.gollersoft.jultragame.core.event.UGKeyEvent;
+import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
+import com.gollersoft.jultragame.binding.swing.display.SwingDisplay;
+import com.gollersoft.jultragame.binding.swing.display.SwingImage;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;

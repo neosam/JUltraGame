@@ -1,14 +1,14 @@
 package com.gollersoft.jultragameswingtest;
 
-import com.gollersoft.jultragame.UG;
-import com.gollersoft.jultragame.UGStuffDelegate;
-import com.gollersoft.jultragame.display.UGColor;
-import com.gollersoft.jultragame.display.UGGraphics;
-import com.gollersoft.jultragame.display.UGImage;
-import com.gollersoft.jultragame.display.UGRenderDelegate;
-import com.gollersoft.jultragame.event.UGKeyEvent;
-import com.gollersoft.jultragame.event.UGKeyboardDelegate;
-import com.gollersoft.jultragameswing.UGSwing;
+import com.gollersoft.jultragame.binding.swing.UGSwing;
+import com.gollersoft.jultragame.core.UG;
+import com.gollersoft.jultragame.core.UGStuffDelegate;
+import com.gollersoft.jultragame.core.display.UGColor;
+import com.gollersoft.jultragame.core.display.UGGraphics;
+import com.gollersoft.jultragame.core.display.UGImage;
+import com.gollersoft.jultragame.core.display.UGRenderDelegate;
+import com.gollersoft.jultragame.core.event.UGKeyEvent;
+import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
 
 import javax.swing.*;
 import java.awt.*;

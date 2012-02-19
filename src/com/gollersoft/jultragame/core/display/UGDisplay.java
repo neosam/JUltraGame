@@ -1,4 +1,4 @@
-package com.gollersoft.jultragame.display;
+package com.gollersoft.jultragame.core.display;
 
 /**
  * Created with IntelliJ IDEA.

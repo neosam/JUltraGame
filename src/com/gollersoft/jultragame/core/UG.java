@@ -1,10 +1,10 @@
-package com.gollersoft.jultragame;
+package com.gollersoft.jultragame.core;
 
-import com.gollersoft.jultragame.display.UGDisplay;
-import com.gollersoft.jultragame.display.UGImage;
-import com.gollersoft.jultragame.event.UGKeyboardDelegate;
-import com.gollersoft.jultragame.event.UGKeycodeTranslation;
-import com.gollersoft.jultragameswing.event.SwingKeycodeTranslation;
+import com.gollersoft.jultragame.core.display.UGDisplay;
+import com.gollersoft.jultragame.core.display.UGImage;
+import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
+import com.gollersoft.jultragame.core.event.UGKeycodeTranslation;
+import com.gollersoft.swing.event.SwingKeycodeTranslation;
 
 /**
  * Created with IntelliJ IDEA.

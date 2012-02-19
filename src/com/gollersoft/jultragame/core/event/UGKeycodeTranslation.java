@@ -1,4 +1,4 @@
-package com.gollersoft.jultragame.event;
+package com.gollersoft.jultragame.core.event;
 
 /**
  * Created with IntelliJ IDEA.
