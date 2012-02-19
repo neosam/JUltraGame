@@ -1,6 +1,7 @@
 package com.gollersoft.jultragame;
 
 import com.gollersoft.jultragame.display.UGDisplay;
+import com.gollersoft.jultragame.event.UGKeyboardDelegate;
 
 /**
  * Created with IntelliJ IDEA.
@@ -11,8 +12,13 @@ import com.gollersoft.jultragame.display.UGDisplay;
  */
 abstract public class UG {
     public final UGDisplay display;
+    private UGKeyboardDelegate keyboardDelegate;
 
     protected UG(UGDisplay display) {
         this.display = display;
+    }
+
+    public void setKeyboardDelgate(UGKeyboardDelegate delegate) {
+        keyboardDelegate = delegate;
     }
 }

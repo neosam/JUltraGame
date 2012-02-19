@@ -4,6 +4,8 @@ import com.gollersoft.jultragame.UG;
 import com.gollersoft.jultragame.display.UGColor;
 import com.gollersoft.jultragame.display.UGGraphics;
 import com.gollersoft.jultragame.display.UGRenderDelegate;
+import com.gollersoft.jultragame.event.UGKeyEvent;
+import com.gollersoft.jultragame.event.UGKeyboardDelegate;
 import com.gollersoft.jultragameswing.UGSwing;
 
 import javax.swing.*;
@@ -21,6 +23,7 @@ public class Testmain {
         final UG ug = new UGSwing(320, 240);
         final JFrame frame = new JFrame("JUltraGame Test");
         final JPanel panel = (JPanel) ug.display.getElement();
+        final Point position = new Point();
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {
             final UGColor black = new UGColor(0, 0, 0);
@@ -28,7 +31,7 @@ public class Testmain {
 
             @Override
             public void draw(UGGraphics g) {
-                g.drawRect(10, 10, 100, 100, black);
+                g.drawRect(position.x, position.y, 32, 32, black);
                 g.drawRect(60, 60, 100, 100, red);
             }
 
@@ -36,9 +39,21 @@ public class Testmain {
             public void resize(int width, int height) {
             }
         });
+        ug.setKeyboardDelgate(new UGKeyboardDelegate() {
+            @Override
+            public void keydown(UGKeyEvent event) {
+                position.x += 10;
+            }
+
+            @Override
+            public void keyup(UGKeyEvent event) {
+                //To change body of implemented methods use File | Settings | File Templates.
+            }
+        });
         frame.add(panel);
         frame.pack();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setVisible(true);
+        panel.requestFocus();
     }
 }
