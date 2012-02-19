@@ -4,7 +4,7 @@ import com.gollersoft.jultragame.core.display.UGDisplay;
 import com.gollersoft.jultragame.core.display.UGImage;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
 import com.gollersoft.jultragame.core.event.UGKeycodeTranslation;
-import com.gollersoft.swing.event.SwingKeycodeTranslation;
+import com.gollersoft.jultragame.binding.swing.event.SwingKeycodeTranslation;
 
 /**
  * Created with IntelliJ IDEA.

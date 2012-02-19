@@ -1,4 +1,4 @@
-package com.gollersoft.swing.event;
+package com.gollersoft.jultragame.binding.swing.event;
 
 import com.gollersoft.jultragame.core.event.UGKeycode;
 import com.gollersoft.jultragame.core.event.UGKeycodeTranslation;
