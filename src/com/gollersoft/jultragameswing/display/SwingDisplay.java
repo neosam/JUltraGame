@@ -13,7 +13,7 @@ import com.gollersoft.jultragame.display.UGRenderDelegate;
 public class SwingDisplay extends UGDisplay {
     private final UGSwingPanel panel;
 
-    SwingDisplay(int width, int height) {
+    public SwingDisplay(int width, int height) {
         panel = new UGSwingPanel(width, height);
     }
 
