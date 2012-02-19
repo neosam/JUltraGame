@@ -14,6 +14,7 @@ public class SwingDisplay extends UGDisplay {
     private final UGSwingPanel panel;
 
     public SwingDisplay(int width, int height) {
+        super(width, height);
         panel = new UGSwingPanel(width, height);
     }
 
@@ -30,5 +31,6 @@ public class SwingDisplay extends UGDisplay {
     public void setRenderDelegate(UGRenderDelegate renderDelegate) {
         super.setRenderDelegate(renderDelegate);
         panel.renderDelegate = renderDelegate;
+        renderDelegate.resize(width, height);
     }
 }

@@ -14,6 +14,11 @@ abstract public class UGDisplay {
     public abstract Object getElement();
     protected abstract void resizeEvent();
 
+    public UGDisplay(int w, int h) {
+        width = w;
+        height = h;
+    }
+
     public void resize(int width, int height) {
         this.width = width;
         this.height = height;

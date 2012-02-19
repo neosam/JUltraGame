@@ -28,15 +28,20 @@ public class Testmain {
         ug.display.setRenderDelegate(new UGRenderDelegate() {
             final UGColor black = new UGColor(0, 0, 0);
             final UGColor red = new UGColor(255, 0, 0);
+            final UGColor white = new UGColor(255, 255, 255);
+            int width, height;
 
             @Override
             public void draw(UGGraphics g) {
+                g.fillRect(0, 0, width, height, white);
                 g.drawRect(position.x, position.y, 32, 32, black);
                 g.drawRect(60, 60, 100, 100, red);
             }
 
             @Override
             public void resize(int width, int height) {
+                this.width = width;
+                this.height = height;
             }
         });
         ug.setKeyboardDelgate(new UGKeyboardDelegate() {

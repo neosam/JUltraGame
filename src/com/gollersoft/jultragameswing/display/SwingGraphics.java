@@ -27,6 +27,12 @@ public class SwingGraphics implements UGGraphics {
     }
 
     @Override
+    public void fillRect(int x, int y, int width, int height, UGColor color) {
+        g.setColor(new Color(color.r, color.b, color.b));
+        g.fillRect(x, y, width, height);
+    }
+
+    @Override
     public void drawImage(UGImage image, int x, int y) {
         g.drawImage(((SwingImage)image).image, x, y, null);
     }
