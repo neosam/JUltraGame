@@ -1,6 +1,7 @@
 package com.gollersoft.jultragame;
 
 import com.gollersoft.jultragame.display.UGDisplay;
+import com.gollersoft.jultragame.display.UGImage;
 import com.gollersoft.jultragame.event.UGKeyboardDelegate;
 import com.gollersoft.jultragame.event.UGKeycodeTranslation;
 import com.gollersoft.jultragameswing.event.SwingKeycodeTranslation;
@@ -26,4 +27,6 @@ abstract public class UG {
     public void setKeyboardDelgate(UGKeyboardDelegate delegate) {
         keyboardDelegate = delegate;
     }
+
+    public abstract UGImage getImage(String path);
 }

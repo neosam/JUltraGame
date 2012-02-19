@@ -1,13 +1,18 @@
 package com.gollersoft.jultragameswing;
 
 import com.gollersoft.jultragame.UG;
+import com.gollersoft.jultragame.display.UGImage;
 import com.gollersoft.jultragame.event.UGKeyEvent;
 import com.gollersoft.jultragame.event.UGKeyboardDelegate;
 import com.gollersoft.jultragameswing.display.SwingDisplay;
+import com.gollersoft.jultragameswing.display.SwingImage;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -58,5 +63,14 @@ public class UGSwing extends UG {
                         keyEvent.isAltDown(), keyEvent.isShiftDown()));
             }
         });
+    }
+
+    @Override
+    public UGImage getImage(String path) {
+        try {
+            return new SwingImage(ImageIO.read(new File(path)));
+        } catch (IOException e) {
+            return null;
+        }
     }
 }

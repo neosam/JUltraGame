@@ -3,6 +3,7 @@ package com.gollersoft.jultragameswingtest;
 import com.gollersoft.jultragame.UG;
 import com.gollersoft.jultragame.display.UGColor;
 import com.gollersoft.jultragame.display.UGGraphics;
+import com.gollersoft.jultragame.display.UGImage;
 import com.gollersoft.jultragame.display.UGRenderDelegate;
 import com.gollersoft.jultragame.event.UGKeyEvent;
 import com.gollersoft.jultragame.event.UGKeyboardDelegate;
@@ -24,6 +25,7 @@ public class Testmain {
         final JFrame frame = new JFrame("JUltraGame Test");
         final JPanel panel = (JPanel) ug.display.getElement();
         final Point position = new Point();
+        final UGImage img = ug.getImage("/home/neosam/IdeaProjects/JUltraGame/testimg.png");
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {
             final UGColor black = new UGColor(0, 0, 0);
@@ -34,7 +36,7 @@ public class Testmain {
             @Override
             public void draw(UGGraphics g) {
                 g.fillRect(0, 0, width, height, white);
-                g.drawRect(position.x, position.y, 32, 32, black);
+                g.drawImage(img, position.x, position.y);
                 g.drawRect(60, 60, 100, 100, red);
             }
 
