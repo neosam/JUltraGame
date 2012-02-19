@@ -8,10 +8,10 @@ package com.gollersoft.jultragame.event;
  * To change this template use File | Settings | File Templates.
  */
 public class UGKeyEvent {
-    final int keycode;
-    final boolean ctrlDown;
-    final boolean altDown;
-    final boolean shiftDown;
+    public final int keycode;
+    public final boolean ctrlDown;
+    public final boolean altDown;
+    public final boolean shiftDown;
 
     public UGKeyEvent(int keycode, boolean ctrlDown, boolean altDown, boolean shiftDown) {
         this.keycode = keycode;

@@ -2,6 +2,8 @@ package com.gollersoft.jultragame;
 
 import com.gollersoft.jultragame.display.UGDisplay;
 import com.gollersoft.jultragame.event.UGKeyboardDelegate;
+import com.gollersoft.jultragame.event.UGKeycodeTranslation;
+import com.gollersoft.jultragameswing.event.SwingKeycodeTranslation;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,9 +15,12 @@ import com.gollersoft.jultragame.event.UGKeyboardDelegate;
 abstract public class UG {
     public final UGDisplay display;
     private UGKeyboardDelegate keyboardDelegate;
+    public final UGKeycodeTranslation keycodeTranslation;
 
     protected UG(UGDisplay display) {
         this.display = display;
+        keycodeTranslation = new SwingKeycodeTranslation();
+
     }
 
     public void setKeyboardDelgate(UGKeyboardDelegate delegate) {

@@ -42,7 +42,20 @@ public class Testmain {
         ug.setKeyboardDelgate(new UGKeyboardDelegate() {
             @Override
             public void keydown(UGKeyEvent event) {
-                position.x += 10;
+                switch (ug.keycodeTranslation.translateKeyCode(event.keycode)) {
+                    case up:
+                        position.y -= 10;
+                        break;
+                    case down:
+                        position.y += 10;
+                        break;
+                    case left:
+                        position.x -= 10;
+                        break;
+                    case right:
+                        position.x += 10;
+                        break;
+                }
             }
 
             @Override
