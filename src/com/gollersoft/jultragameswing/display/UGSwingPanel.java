@@ -5,6 +5,8 @@ import com.gollersoft.jultragame.display.UGRenderDelegate;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,6 +28,25 @@ public class UGSwingPanel extends JPanel {
             @Override
             public void resize(int width, int height) {}
         };
+
+        addComponentListener(new ComponentListener() {
+            @Override
+            public void componentResized(ComponentEvent componentEvent) {
+                renderDelegate.resize(getWidth(), getHeight());
+            }
+
+            @Override
+            public void componentMoved(ComponentEvent componentEvent) {
+            }
+
+            @Override
+            public void componentShown(ComponentEvent componentEvent) {
+            }
+
+            @Override
+            public void componentHidden(ComponentEvent componentEvent) {
+            }
+        });
     }
 
     public void paintComponent(Graphics g) {
