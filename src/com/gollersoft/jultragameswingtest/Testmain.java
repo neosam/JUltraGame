@@ -26,6 +26,7 @@ public class Testmain {
         final JFrame frame = new JFrame("JUltraGame Test");
         final JPanel panel = (JPanel) ug.display.getElement();
         final Point position = new Point();
+        final Point speed = new Point();
         final UGImage img = ug.getImage("testimg.png");
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {
@@ -37,7 +38,8 @@ public class Testmain {
             @Override
             public void draw(UGGraphics g) {
                 g.fillRect(0, 0, width, height, white);
-                g.drawImage(img, position.x, position.y);
+                g.drawImage(img, position.x, position.y, 32, 0, 32, 32);
+                g.drawImage(img, width - 32, height - 32, 32, 32, 32, 32);
                 g.drawRect(60, 60, 100, 100, red);
             }
 
@@ -52,29 +54,43 @@ public class Testmain {
             public void keydown(UGKeyEvent event) {
                 switch (ug.keycodeTranslation.translateKeyCode(event.keycode)) {
                     case up:
-                        position.y -= 10;
+                        speed.y = -4;
                         break;
                     case down:
-                        position.y += 10;
+                        speed.y = 4;
                         break;
                     case left:
-                        position.x -= 10;
+                        speed.x = -4;
                         break;
                     case right:
-                        position.x += 10;
+                        speed.x = 4;
                         break;
                 }
             }
 
             @Override
             public void keyup(UGKeyEvent event) {
-                //To change body of implemented methods use File | Settings | File Templates.
+                switch (ug.keycodeTranslation.translateKeyCode(event.keycode)) {
+                    case up:
+                        speed.y = 0;
+                        break;
+                    case down:
+                        speed.y = 0;
+                        break;
+                    case left:
+                        speed.x = 0;
+                        break;
+                    case right:
+                        speed.x = 0;
+                        break;
+                }
             }
         });
         ug.stuffDelegate = new UGStuffDelegate() {
             @Override
             public void frame() {
-                position.x--;
+                position.x += speed.x;
+                position.y += speed.y;
             }
         };
 

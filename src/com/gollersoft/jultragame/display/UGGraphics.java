@@ -11,4 +11,5 @@ public interface UGGraphics {
     void drawRect(int x, int y, int width, int height, UGColor color);
     void fillRect(int x, int y, int width, int height, UGColor color);
     void drawImage(UGImage image, int x, int y);
+    void drawImage(UGImage image, int x, int y, int xBegin, int yBegin, int width, int height);
 }

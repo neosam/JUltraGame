@@ -36,4 +36,10 @@ public class SwingGraphics implements UGGraphics {
     public void drawImage(UGImage image, int x, int y) {
         g.drawImage(((SwingImage)image).image, x, y, null);
     }
+
+    @Override
+    public void drawImage(UGImage image, int x, int y, int xBegin, int yBegin, int width, int height) {
+        g.drawImage(((SwingImage)image).image, x, y, x + width, y + height,
+                xBegin, yBegin, xBegin + width, yBegin + height, null);
+    }
 }
