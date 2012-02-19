@@ -35,4 +35,5 @@ abstract public class UG {
     }
 
     public abstract UGImage getImage(String path);
+    public abstract UGMap createMap();
 }

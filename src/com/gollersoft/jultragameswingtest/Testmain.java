@@ -2,6 +2,8 @@ package com.gollersoft.jultragameswingtest;
 
 import com.gollersoft.jultragame.binding.swing.UGSwing;
 import com.gollersoft.jultragame.core.UG;
+import com.gollersoft.jultragame.core.UGFinalRect;
+import com.gollersoft.jultragame.core.UGPoint;
 import com.gollersoft.jultragame.core.UGStuffDelegate;
 import com.gollersoft.jultragame.core.display.UGColor;
 import com.gollersoft.jultragame.core.display.UGGraphics;
@@ -9,6 +11,9 @@ import com.gollersoft.jultragame.core.display.UGImage;
 import com.gollersoft.jultragame.core.display.UGRenderDelegate;
 import com.gollersoft.jultragame.core.event.UGKeyEvent;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
+import com.gollersoft.sprite.UGSprite;
+import com.gollersoft.sprite.UGSpriteAnimation;
+import com.gollersoft.sprite.UGSpriteAnimationStorage;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +33,11 @@ public class Testmain {
         final Point position = new Point();
         final Point speed = new Point();
         final UGImage img = ug.getImage("testimg.png");
+        final UGSpriteAnimation animation = new UGSpriteAnimation(new UGFinalRect(0, 0, 32, 32), 0, 2);
+        final UGSpriteAnimationStorage animationStorage = new UGSpriteAnimationStorage(ug);
+        animationStorage.put("default", animation);
+        final UGSprite sprite = new UGSprite(img, animationStorage);
+
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {
             final UGColor black = new UGColor(0, 0, 0);
@@ -38,7 +48,7 @@ public class Testmain {
             @Override
             public void draw(UGGraphics g) {
                 g.fillRect(0, 0, width, height, white);
-                g.drawImage(img, position.x, position.y, 32, 0, 32, 32);
+                sprite.draw(g);
                 g.drawImage(img, width - 32, height - 32, 32, 32, 32, 32);
                 g.drawRect(60, 60, 100, 100, red);
             }
@@ -91,6 +101,9 @@ public class Testmain {
             public void frame() {
                 position.x += speed.x;
                 position.y += speed.y;
+
+                sprite.step();
+                sprite.setPos(new UGPoint(position.x, position.y));
             }
         };
 

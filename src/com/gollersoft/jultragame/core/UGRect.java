@@ -9,4 +9,14 @@ package com.gollersoft.jultragame.core;
  */
 public class UGRect {
     public int x, y, width, height;
+
+    public UGRect(int x, int y, int width, int height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+    }
+
+    public UGRect() {
+    }
 }
