@@ -18,6 +18,7 @@ public class UGSpriteAnimation {
     private int next;
 
     private int counter;
+    private int step;
 
     public UGSpriteAnimation(UGFinalRect begin, int offset, int length) {
         this.begin = begin;
@@ -26,13 +27,20 @@ public class UGSpriteAnimation {
         x = begin.x;
         next = 1;
         counter = 0;
+        step = 0;
     }
 
     public void step() {
         counter++;
-        if (counter == length) {
-            counter = 0;
-            x += offset + begin.width;
+        if (counter >= next) {
+            step++;
+            if (step >= length) {
+                x = begin.x;
+                step = 0;
+            } else {
+                counter = 0;
+                x += offset + begin.width;
+            }
         }
     }
 
