@@ -17,8 +17,24 @@ import java.awt.event.KeyListener;
  * To change this template use File | Settings | File Templates.
  */
 public class UGSwing extends UG {
+
     public UGSwing(int w, int h) {
         super(new SwingDisplay(w, h));
+
+        new Thread() {
+            @Override
+            public void run() {
+                try {
+                    while (true) {
+                        Thread.sleep(33);
+                        ((JPanel) display.getElement()).repaint();
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+
+            }
+        }.start();
     }
 
     @Override
