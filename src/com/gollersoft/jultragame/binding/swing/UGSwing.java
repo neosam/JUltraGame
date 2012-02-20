@@ -1,6 +1,7 @@
 package com.gollersoft.jultragame.binding.swing;
 
 import com.gollersoft.jultragame.core.UG;
+import com.gollersoft.jultragame.core.UGList;
 import com.gollersoft.jultragame.core.UGMap;
 import com.gollersoft.jultragame.core.display.UGImage;
 import com.gollersoft.jultragame.core.event.UGKeyEvent;
@@ -79,5 +80,10 @@ public class UGSwing extends UG {
     @Override
     public UGMap createMap() {
         return new SwingMap();
+    }
+
+    @Override
+    public UGList createList() {
+        return new SwingList();
     }
 }
