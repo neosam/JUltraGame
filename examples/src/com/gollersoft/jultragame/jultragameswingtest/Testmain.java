@@ -1,4 +1,4 @@
-package com.gollersoft.jultragameswingtest;
+package com.gollersoft.jultragame.jultragameswingtest;
 
 import com.gollersoft.jultragame.binding.swing.UGSwing;
 import com.gollersoft.jultragame.core.UG;
