@@ -9,6 +9,7 @@ import com.gollersoft.jultragame.core.display.UGGraphics;
  * Time: 10:49 PM
  * To change this template use File | Settings | File Templates.
  */
-abstract public class UGLayer {
+public interface UGLayer {
     abstract void draw(UGGraphics g);
+    abstract void frame();
 }

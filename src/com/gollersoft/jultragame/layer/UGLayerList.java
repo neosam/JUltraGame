@@ -11,7 +11,7 @@ import com.gollersoft.jultragame.core.display.UGGraphics;
  * Time: 10:55 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UGLayerList implements UGList<UGLayer> {
+public class UGLayerList implements UGList<UGLayer>, UGLayer {
     private final UGList<UGLayer> layers;
 
     public UGLayerList(UG ug) {
@@ -37,4 +37,11 @@ public class UGLayerList implements UGList<UGLayer> {
         for (int i = 0; i < layers.size(); i++)
             layers.at(i).draw(g);
     }
+
+    @Override
+    public void frame() {
+        for (int i = 0; i < layers.size(); i++)
+            layers.at(i).frame();
+    }
+
 }
