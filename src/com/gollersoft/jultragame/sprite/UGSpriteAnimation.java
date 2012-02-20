@@ -1,4 +1,4 @@
-package com.gollersoft.sprite;
+package com.gollersoft.jultragame.sprite;
 
 import com.gollersoft.jultragame.core.UGFinalRect;
 

@@ -11,9 +11,9 @@ import com.gollersoft.jultragame.core.display.UGImage;
 import com.gollersoft.jultragame.core.display.UGRenderDelegate;
 import com.gollersoft.jultragame.core.event.UGKeyEvent;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
-import com.gollersoft.sprite.UGSprite;
-import com.gollersoft.sprite.UGSpriteAnimation;
-import com.gollersoft.sprite.UGSpriteAnimationStorage;
+import com.gollersoft.jultragame.sprite.UGSprite;
+import com.gollersoft.jultragame.sprite.UGSpriteAnimation;
+import com.gollersoft.jultragame.sprite.UGSpriteAnimationStorage;
 
 import javax.swing.*;
 import java.awt.*;

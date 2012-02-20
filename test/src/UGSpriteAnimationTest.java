@@ -1,10 +1,9 @@
 import com.gollersoft.jultragame.core.UGFinalRect;
-import com.gollersoft.sprite.UGSpriteAnimation;
+import com.gollersoft.jultragame.sprite.UGSpriteAnimation;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.runners.JUnit4;
-import sun.plugin.util.AnimationPanel;
+
 import static org.junit.Assert.*;
 
 /**
