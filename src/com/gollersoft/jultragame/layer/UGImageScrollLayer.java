@@ -1,6 +1,8 @@
 package com.gollersoft.jultragame.layer;
 
+import com.gollersoft.jultragame.core.display.UGCamera;
 import com.gollersoft.jultragame.core.display.UGGraphics;
+import com.gollersoft.jultragame.core.display.UGImage;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,13 +12,20 @@ import com.gollersoft.jultragame.core.display.UGGraphics;
  * To change this template use File | Settings | File Templates.
  */
 public class UGImageScrollLayer implements UGLayer {
+    private UGImage image;
+    private UGCamera camera;
+
+    public UGImageScrollLayer(UGImage image, UGCamera camera) {
+        this.image = image;
+        this.camera = camera;
+    }
+
     @Override
     public void draw(UGGraphics g) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        g.drawImage(image, -camera.x, -camera.y);
     }
 
     @Override
     public void frame() {
-        //To change body of implemented methods use File | Settings | File Templates.
     }
 }
