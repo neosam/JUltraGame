@@ -5,12 +5,12 @@ import com.gollersoft.jultragame.core.UG;
 import com.gollersoft.jultragame.core.UGFinalRect;
 import com.gollersoft.jultragame.core.UGPoint;
 import com.gollersoft.jultragame.core.UGStuffDelegate;
-import com.gollersoft.jultragame.core.display.UGColor;
-import com.gollersoft.jultragame.core.display.UGGraphics;
-import com.gollersoft.jultragame.core.display.UGImage;
-import com.gollersoft.jultragame.core.display.UGRenderDelegate;
+import com.gollersoft.jultragame.core.display.*;
 import com.gollersoft.jultragame.core.event.UGKeyEvent;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
+import com.gollersoft.jultragame.layer.UGImageScrollLayer;
+import com.gollersoft.jultragame.layer.UGLayer;
+import com.gollersoft.jultragame.layer.UGLayerList;
 import com.gollersoft.jultragame.sprite.UGSprite;
 import com.gollersoft.jultragame.sprite.UGSpriteAnimation;
 import com.gollersoft.jultragame.sprite.UGSpriteAnimationStorage;
@@ -37,6 +37,10 @@ public class Testmain {
         final UGSpriteAnimationStorage animationStorage = new UGSpriteAnimationStorage(ug);
         animationStorage.put("default", animation);
         final UGSprite sprite = new UGSprite(img, animationStorage);
+        final UGLayerList layers = new UGLayerList(ug);
+        final UGCamera camera = new UGCamera();
+        final UGLayer imageLayer = new UGImageScrollLayer(img, camera);
+        layers.add(imageLayer);
 
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {
@@ -51,6 +55,7 @@ public class Testmain {
                 sprite.draw(g);
                 g.drawImage(img, width - 32, height - 32, 32, 32, 32, 32);
                 g.drawRect(60, 60, 100, 100, red);
+                layers.draw(g);
             }
 
             @Override
@@ -104,6 +109,8 @@ public class Testmain {
 
                 sprite.step();
                 sprite.setPos(new UGPoint(position.x, position.y));
+                camera.x = position.x;
+                camera.y = position.y;
             }
         };
 
