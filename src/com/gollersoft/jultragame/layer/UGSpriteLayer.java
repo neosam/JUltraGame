@@ -29,6 +29,7 @@ public class UGSpriteLayer implements UGLayer {
 
     @Override
     public void frame() {
-
+        for (int i = 0; i < sprites.size(); i++)
+            sprites.at(i).step();
     }
 }
