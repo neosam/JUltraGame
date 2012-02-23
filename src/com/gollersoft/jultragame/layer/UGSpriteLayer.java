@@ -12,7 +12,7 @@ import com.gollersoft.jultragame.sprite.UGSprite;
  * Time: 8:01 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UGSpriteLayer implements UGLayer {
+public class UGSpriteLayer implements UGLayer, UGList<UGSprite> {
     private final UG ug;
     private final UGList<UGSprite> sprites;
 
@@ -31,5 +31,20 @@ public class UGSpriteLayer implements UGLayer {
     public void frame() {
         for (int i = 0; i < sprites.size(); i++)
             sprites.at(i).step();
+    }
+
+    @Override
+    public int size() {
+        return sprites.size();
+    }
+
+    @Override
+    public void add(UGSprite ugSprite) {
+        sprites.add(ugSprite);
+    }
+
+    @Override
+    public UGSprite at(int i) {
+        return sprites.at(i);
     }
 }
