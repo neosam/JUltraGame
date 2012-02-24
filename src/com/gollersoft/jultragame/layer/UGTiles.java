@@ -22,6 +22,7 @@ public class UGTiles {
         this.images = images;
         this.tileSize = tileSize;
         tiles = new UGTile[size.width * size.height];
+        for (int i = 0; i < tiles.length; i++)  tiles[i] = new UGTile(0, 0);
     }
 
     public UGTile getTileAt(int x, int y) {
