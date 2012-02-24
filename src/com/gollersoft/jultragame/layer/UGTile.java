@@ -8,9 +8,9 @@ package com.gollersoft.jultragame.layer;
  * To change this template use File | Settings | File Templates.
  */
 public class UGTile {
-    private final int x, y;
-    private boolean visible = true;
-    private boolean walkable = true;
+    final private int x, y;
+    final private boolean visible = true;
+    final private boolean walkable = true;
 
 
     public UGTile(int x, int y) {
@@ -34,15 +34,7 @@ public class UGTile {
         return visible;
     }
 
-    public void setVisible(boolean visible) {
-        this.visible = visible;
-    }
-
     public boolean isWalkable() {
         return walkable;
-    }
-
-    public void setWalkable(boolean walkable) {
-        this.walkable = walkable;
     }
 }
