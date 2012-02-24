@@ -39,4 +39,12 @@ public class UGTiles {
         for (int i = 0; i < tiles.length; i++)
             tiles[i].frame();
     }
+
+    public UGFinalDimension getSize() {
+        return size;
+    }
+
+    public UGFinalDimension getTileSize() {
+        return tileSize;
+    }
 }
