@@ -14,4 +14,9 @@ public class UGFinalPoint {
         this.x = x;
         this.y = y;
     }
+
+    public UGFinalPoint(UGPoint point) {
+        this.x = point.x;
+        this.y = point.y;
+    }
 }

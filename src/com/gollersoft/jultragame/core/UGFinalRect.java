@@ -16,4 +16,11 @@ public class UGFinalRect {
         this.width = width;
         this.height = height;
     }
+
+    public UGFinalRect(UGRect rect) {
+        this.x = rect.x;
+        this.y = rect.y;
+        this.width = rect.width;
+        this.height = rect.height;
+    }
 }
