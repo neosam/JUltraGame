@@ -32,7 +32,8 @@ public class UGTiles {
         final UGTile tile = getTileAt(tileX, tileY);
         final int x = tile.getX() * tileSize.width;
         final int y = tile.getY() * tileSize.height;
-        g.drawImage(images, destX, destY, x, y, tileSize.width, tileSize.height);
+        if (tile.isVisible())
+            g.drawImage(images, destX, destY, x, y, tileSize.width, tileSize.height);
     }
 
     public void frame() {
