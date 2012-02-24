@@ -9,6 +9,8 @@ package com.gollersoft.jultragame.layer;
  */
 public class UGTile {
     private final int x, y;
+    private boolean visible;
+    private boolean walkable;
 
 
     public UGTile(int x, int y) {
@@ -26,5 +28,21 @@ public class UGTile {
 
     public void frame() {
         /* not needed in this static tile class */
+    }
+
+    public boolean isVisible() {
+        return visible;
+    }
+
+    public void setVisible(boolean visible) {
+        this.visible = visible;
+    }
+
+    public boolean isWalkable() {
+        return walkable;
+    }
+
+    public void setWalkable(boolean walkable) {
+        this.walkable = walkable;
     }
 }
