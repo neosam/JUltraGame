@@ -16,4 +16,13 @@ public class UGMouseClickEvent {
         this.x = x;
         this.y = y;
     }
+
+    @Override
+    public String toString() {
+        return "UGMouseClickEvent{" +
+                "button=" + button +
+                ", x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }

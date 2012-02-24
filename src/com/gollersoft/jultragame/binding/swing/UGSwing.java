@@ -8,11 +8,15 @@ import com.gollersoft.jultragame.core.event.UGKeyEvent;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
 import com.gollersoft.jultragame.binding.swing.display.SwingDisplay;
 import com.gollersoft.jultragame.binding.swing.display.SwingImage;
+import com.gollersoft.jultragame.core.event.UGMouseClickEvent;
+import com.gollersoft.jultragame.core.event.UGMouseDelegate;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.io.File;
 import java.io.IOException;
 
@@ -64,6 +68,36 @@ public class UGSwing extends UG {
             public void keyReleased(KeyEvent keyEvent) {
                 delegate.keyup(new UGKeyEvent(keyEvent.getKeyCode(), keyEvent.isControlDown(),
                         keyEvent.isAltDown(), keyEvent.isShiftDown()));
+            }
+        });
+    }
+
+    @Override
+    public void setMouseDelegate(final UGMouseDelegate mouseDelegate) {
+        super.setMouseDelegate(mouseDelegate);
+        final JPanel panel = (JPanel) display.getElement();
+        panel.addMouseListener(new MouseListener() {
+            @Override
+            public void mouseClicked(MouseEvent mouseEvent) {
+                mouseDelegate.mouseClicked(new UGMouseClickEvent(mouseEvent.getButton(),
+                        mouseEvent.getX(),
+                        mouseEvent.getY()));
+            }
+
+            @Override
+            public void mousePressed(MouseEvent mouseEvent) {
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent mouseEvent) {
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent mouseEvent) {
+            }
+
+            @Override
+            public void mouseExited(MouseEvent mouseEvent) {
             }
         });
     }

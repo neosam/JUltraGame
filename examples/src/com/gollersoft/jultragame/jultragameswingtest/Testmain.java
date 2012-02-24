@@ -5,6 +5,8 @@ import com.gollersoft.jultragame.core.*;
 import com.gollersoft.jultragame.core.display.*;
 import com.gollersoft.jultragame.core.event.UGKeyEvent;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
+import com.gollersoft.jultragame.core.event.UGMouseClickEvent;
+import com.gollersoft.jultragame.core.event.UGMouseDelegate;
 import com.gollersoft.jultragame.layer.*;
 import com.gollersoft.jultragame.sprite.UGSprite;
 import com.gollersoft.jultragame.sprite.UGSpriteAnimation;
@@ -48,7 +50,9 @@ public class Testmain {
             final UGColor black = new UGColor(0, 0, 0);
             final UGColor red = new UGColor(255, 0, 0);
             final UGColor white = new UGColor(255, 255, 255);
-            int width, height;
+            int width
+                    ,
+                    height;
 
             @Override
             public void draw(UGGraphics g) {
@@ -101,6 +105,12 @@ public class Testmain {
                         speed.x = 0;
                         break;
                 }
+            }
+        });
+        ug.setMouseDelegate(new UGMouseDelegate() {
+            @Override
+            public void mouseClicked(UGMouseClickEvent event) {
+                System.out.println(event);
             }
         });
         ug.stuffDelegate = new UGStuffDelegate() {

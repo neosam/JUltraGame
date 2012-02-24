@@ -5,6 +5,7 @@ import com.gollersoft.jultragame.core.display.UGImage;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
 import com.gollersoft.jultragame.core.event.UGKeycodeTranslation;
 import com.gollersoft.jultragame.binding.swing.event.SwingKeycodeTranslation;
+import com.gollersoft.jultragame.core.event.UGMouseDelegate;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,6 +17,7 @@ import com.gollersoft.jultragame.binding.swing.event.SwingKeycodeTranslation;
 abstract public class UG {
     public final UGDisplay display;
     private UGKeyboardDelegate keyboardDelegate;
+    private UGMouseDelegate mouseDelegate;
     public final UGKeycodeTranslation keycodeTranslation;
     public UGStuffDelegate stuffDelegate;
 
@@ -32,6 +34,10 @@ abstract public class UG {
 
     public void setKeyboardDelgate(UGKeyboardDelegate delegate) {
         keyboardDelegate = delegate;
+    }
+
+    public void setMouseDelegate(UGMouseDelegate mouseDelegate) {
+        this.mouseDelegate = mouseDelegate;
     }
 
     public abstract UGImage getImage(String path);
