@@ -9,8 +9,8 @@ package com.gollersoft.jultragame.layer;
  */
 public class UGTile {
     private final int x, y;
-    private boolean visible;
-    private boolean walkable;
+    private boolean visible = true;
+    private boolean walkable = true;
 
 
     public UGTile(int x, int y) {
