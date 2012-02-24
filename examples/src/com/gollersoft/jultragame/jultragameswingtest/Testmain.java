@@ -1,16 +1,11 @@
 package com.gollersoft.jultragame.jultragameswingtest;
 
 import com.gollersoft.jultragame.binding.swing.UGSwing;
-import com.gollersoft.jultragame.core.UG;
-import com.gollersoft.jultragame.core.UGFinalRect;
-import com.gollersoft.jultragame.core.UGPoint;
-import com.gollersoft.jultragame.core.UGStuffDelegate;
+import com.gollersoft.jultragame.core.*;
 import com.gollersoft.jultragame.core.display.*;
 import com.gollersoft.jultragame.core.event.UGKeyEvent;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
-import com.gollersoft.jultragame.layer.UGImageScrollLayer;
-import com.gollersoft.jultragame.layer.UGLayer;
-import com.gollersoft.jultragame.layer.UGLayerList;
+import com.gollersoft.jultragame.layer.*;
 import com.gollersoft.jultragame.sprite.UGSprite;
 import com.gollersoft.jultragame.sprite.UGSpriteAnimation;
 import com.gollersoft.jultragame.sprite.UGSpriteAnimationStorage;
@@ -41,6 +36,12 @@ public class Testmain {
         final UGCamera camera = new UGCamera();
         final UGLayer imageLayer = new UGImageScrollLayer(img, camera);
         layers.add(imageLayer);
+        final UGTiles tiles = new UGTiles(new UGFinalDimension(30, 30), img,
+                new UGFinalDimension(32, 32));
+        final UGTileLayer tileLayer = new UGTileLayer(tiles, camera);
+        tiles.setTileAt(new UGTile(1, 0), 1, 0);
+        tiles.setTileAt(new UGTile(0, 1), 0, 1);
+        tiles.setTileAt(new UGTile(1, 1), 1, 1);
 
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {
@@ -56,6 +57,7 @@ public class Testmain {
                 g.drawImage(img, width - 32, height - 32, 32, 32, 32, 32);
                 g.drawRect(60, 60, 100, 100, red);
                 layers.draw(g);
+                tileLayer.draw(g);
             }
 
             @Override
@@ -111,6 +113,8 @@ public class Testmain {
                 sprite.setPos(new UGPoint(position.x, position.y));
                 camera.x = position.x;
                 camera.y = position.y;
+
+                tileLayer.frame();
             }
         };
 
