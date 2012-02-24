@@ -28,6 +28,10 @@ public class UGTiles {
         return tiles[y * size.width + x];
     }
 
+    public void setTileAt(UGTile tile, int x, int y) {
+        tiles[y * size.width + x] = tile;
+    }
+
     public void drawTile(UGGraphics g, int tileX, int tileY, int destX, int destY) {
         final UGTile tile = getTileAt(tileX, tileY);
         final int x = tile.getX() * tileSize.width;
