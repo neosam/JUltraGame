@@ -49,4 +49,10 @@ public class UGSprite {
     public void setPos(UGPoint pos) {
         this.pos = pos;
     }
+
+    public UGFinalRect getSpriteRect() {
+        final UGFinalRect size = currentAnimation.getPosition();
+
+        return new UGFinalRect(pos.x, pos.y, size.width, size.height);
+    }
 }

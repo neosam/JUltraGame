@@ -37,7 +37,10 @@ public class Testmain {
         final UGLayerList layers = new UGLayerList(ug);
         final UGCamera camera = new UGCamera();
         final UGLayer imageLayer = new UGImageScrollLayer(img, camera);
+        final UGSpriteLayer spriteLayer = new UGSpriteLayer(ug, camera);
+        spriteLayer.add(sprite);
         layers.add(imageLayer);
+        layers.add(spriteLayer);
         final UGTiles tiles = new UGTiles(new UGFinalDimension(30, 30), img,
                 new UGFinalDimension(32, 32));
         final UGTileLayer tileLayer = new UGTileLayer(tiles, camera);
@@ -57,10 +60,10 @@ public class Testmain {
             @Override
             public void draw(UGGraphics g) {
                 g.fillRect(0, 0, width, height, white);
-                sprite.draw(g, camera);
+                //sprite.draw(g, camera);
                 //g.drawImage(img, width - 32, height - 32, 32, 32, 32, 32);
                 g.drawRect(60, 60, 100, 100, red);
-                //layers.draw(g);
+                layers.draw(g);
                 //tileLayer.draw(g);
             }
 
@@ -111,6 +114,7 @@ public class Testmain {
             @Override
             public void mouseClicked(UGMouseClickEvent event) {
                 System.out.println(event);
+                System.out.println("Pushed:  " + spriteLayer.atPixelPosition(event.x, event.y));
             }
         });
         ug.stuffDelegate = new UGStuffDelegate() {

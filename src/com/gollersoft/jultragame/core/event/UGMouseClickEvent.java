@@ -8,8 +8,8 @@ package com.gollersoft.jultragame.core.event;
  * To change this template use File | Settings | File Templates.
  */
 public class UGMouseClickEvent {
-    final int button;
-    final int x, y;
+    public final int button;
+    public final int x, y;
 
     public UGMouseClickEvent(int button, int x, int y) {
         this.button = button;

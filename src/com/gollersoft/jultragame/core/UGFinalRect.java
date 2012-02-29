@@ -23,4 +23,14 @@ public class UGFinalRect {
         this.width = rect.width;
         this.height = rect.height;
     }
+
+    @Override
+    public String toString() {
+        return "UGFinalRect{" +
+                "x=" + x +
+                ", y=" + y +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
+    }
 }

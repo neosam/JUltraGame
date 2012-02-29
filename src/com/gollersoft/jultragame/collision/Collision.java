@@ -13,21 +13,21 @@ import com.gollersoft.jultragame.core.UGRect;
  * To change this template use File | Settings | File Templates.
  */
 public class Collision {
-    public boolean pointInRect(UGFinalPoint point, UGFinalRect rect) {
-        final int diffX = rect.x - point.x;
-        final int diffY = rect.y - point.y;
+    public static boolean pointInRect(UGFinalPoint point, UGFinalRect rect) {
+        final int diffX = point.x - rect.x;
+        final int diffY = point.y - rect.y;
         return (diffX >= 0 && diffY >= 0 && diffX < rect.width && diffY < rect.height);
     }
 
-    public boolean pointInRect(UGPoint point, UGFinalRect rect) {
+    public static boolean pointInRect(UGPoint point, UGFinalRect rect) {
         return pointInRect(new UGFinalPoint(point), rect);
     }
 
-    public boolean pointInRect(UGFinalPoint point, UGRect rect) {
+    public static boolean pointInRect(UGFinalPoint point, UGRect rect) {
         return pointInRect(point, new UGFinalRect(rect));
     }
 
-    public boolean pointInRect(UGPoint point, UGRect rect) {
+    public static boolean pointInRect(UGPoint point, UGRect rect) {
         return pointInRect(new UGFinalPoint(point), new UGFinalRect(rect));
     }
 }

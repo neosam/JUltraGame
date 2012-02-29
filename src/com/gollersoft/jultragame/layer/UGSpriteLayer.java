@@ -1,7 +1,7 @@
 package com.gollersoft.jultragame.layer;
 
-import com.gollersoft.jultragame.core.UG;
-import com.gollersoft.jultragame.core.UGList;
+import com.gollersoft.jultragame.collision.Collision;
+import com.gollersoft.jultragame.core.*;
 import com.gollersoft.jultragame.core.display.UGCamera;
 import com.gollersoft.jultragame.core.display.UGGraphics;
 import com.gollersoft.jultragame.sprite.UGSprite;
@@ -49,5 +49,16 @@ public class UGSpriteLayer implements UGLayer, UGList<UGSprite> {
     @Override
     public UGSprite at(int i) {
         return sprites.at(i);
+    }
+
+    public UGSprite atPixelPosition(int x, int y) {
+        for (int i = 0; i < size(); i++) {
+            final UGSprite sprite = sprites.at(i);
+            final UGFinalRect rect = sprite.getSpriteRect();
+            System.out.println(rect);
+            if (Collision.pointInRect(new UGFinalPoint(x, y), rect))
+                return sprite;
+        }
+        return null;
     }
 }
