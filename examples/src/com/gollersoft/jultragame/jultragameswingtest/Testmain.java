@@ -57,11 +57,11 @@ public class Testmain {
             @Override
             public void draw(UGGraphics g) {
                 g.fillRect(0, 0, width, height, white);
-                sprite.draw(g);
-                g.drawImage(img, width - 32, height - 32, 32, 32, 32, 32);
+                sprite.draw(g, camera);
+                //g.drawImage(img, width - 32, height - 32, 32, 32, 32, 32);
                 g.drawRect(60, 60, 100, 100, red);
-                layers.draw(g);
-                tileLayer.draw(g);
+                //layers.draw(g);
+                //tileLayer.draw(g);
             }
 
             @Override

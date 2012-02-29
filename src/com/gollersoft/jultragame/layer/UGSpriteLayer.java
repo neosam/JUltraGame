@@ -2,6 +2,7 @@ package com.gollersoft.jultragame.layer;
 
 import com.gollersoft.jultragame.core.UG;
 import com.gollersoft.jultragame.core.UGList;
+import com.gollersoft.jultragame.core.display.UGCamera;
 import com.gollersoft.jultragame.core.display.UGGraphics;
 import com.gollersoft.jultragame.sprite.UGSprite;
 
@@ -15,16 +16,18 @@ import com.gollersoft.jultragame.sprite.UGSprite;
 public class UGSpriteLayer implements UGLayer, UGList<UGSprite> {
     private final UG ug;
     private final UGList<UGSprite> sprites;
+    private final UGCamera camera;
 
-    public UGSpriteLayer(UG ug) {
+    public UGSpriteLayer(UG ug, UGCamera camera) {
         this.ug = ug;
         sprites = ug.createList();
+        this.camera = camera;
     }
 
     @Override
     public void draw(UGGraphics g) {
         for (int i = 0; i < sprites.size(); i++)
-            sprites.at(i).draw(g);
+            sprites.at(i).draw(g, camera);
     }
 
     @Override

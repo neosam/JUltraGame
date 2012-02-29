@@ -2,6 +2,7 @@ package com.gollersoft.jultragame.sprite;
 
 import com.gollersoft.jultragame.core.UGFinalRect;
 import com.gollersoft.jultragame.core.UGPoint;
+import com.gollersoft.jultragame.core.display.UGCamera;
 import com.gollersoft.jultragame.core.display.UGGraphics;
 import com.gollersoft.jultragame.core.display.UGImage;
 
@@ -34,9 +35,9 @@ public class UGSprite {
         if (tmp != null) currentAnimation = tmp;
     }
 
-    public void draw(UGGraphics g) {
+    public void draw(UGGraphics g, UGCamera camera) {
         final UGFinalRect drawingRect = currentAnimation.getPosition();
-        g.drawImage(graphics, pos.x, pos.y,
+        g.drawImage(graphics, pos.x - camera.x, pos.y - camera.y,
                 drawingRect.x, drawingRect.y,
                 drawingRect.width, drawingRect.height);
     }
