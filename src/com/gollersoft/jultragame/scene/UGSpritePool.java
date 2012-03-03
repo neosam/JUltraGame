@@ -32,4 +32,9 @@ public class UGSpritePool implements UGList<UGSprite> {
     public UGSprite at(int i) {
         return sprites.at(i);
     }
+
+    public void frame() {
+
+    }
+
 }
