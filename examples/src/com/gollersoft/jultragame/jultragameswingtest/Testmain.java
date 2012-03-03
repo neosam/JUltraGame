@@ -48,7 +48,6 @@ public class Testmain {
         tiles.setTileAt(new UGTile(1, 0), 1, 0);
         tiles.setTileAt(new UGTile(0, 1), 0, 1);
         tiles.setTileAt(new UGTile(1, 1), 1, 1);
-        ug.keycodeTranslation = new SwingKeycodeTranslation();
 
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {

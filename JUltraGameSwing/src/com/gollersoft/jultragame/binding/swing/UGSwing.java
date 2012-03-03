@@ -1,5 +1,6 @@
 package com.gollersoft.jultragame.binding.swing;
 
+import com.gollersoft.jultragame.binding.swing.event.SwingKeycodeTranslation;
 import com.gollersoft.jultragame.core.UG;
 import com.gollersoft.jultragame.core.UGList;
 import com.gollersoft.jultragame.core.UGMap;
@@ -31,6 +32,7 @@ public class UGSwing extends UG {
 
     public UGSwing(int w, int h) {
         super(new SwingDisplay(w, h));
+        keycodeTranslation = new SwingKeycodeTranslation();
 
         new Thread() {
             @Override
