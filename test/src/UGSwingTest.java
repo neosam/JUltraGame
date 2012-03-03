@@ -5,7 +5,6 @@ import com.gollersoft.jultragame.binding.swing.display.SwingImage;
 import com.gollersoft.jultragame.core.UGList;
 import com.gollersoft.jultragame.core.UGMap;
 import com.gollersoft.jultragame.core.display.UGImage;
-import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
 import org.junit.After;
 import org.junit.Before;
 import static org.junit.Assert.*;

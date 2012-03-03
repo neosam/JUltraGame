@@ -1,6 +1,7 @@
 package com.gollersoft.jultragame.jultragameswingtest;
 
 import com.gollersoft.jultragame.binding.swing.UGSwing;
+import com.gollersoft.jultragame.binding.swing.event.SwingKeycodeTranslation;
 import com.gollersoft.jultragame.core.*;
 import com.gollersoft.jultragame.core.display.*;
 import com.gollersoft.jultragame.core.event.UGKeyEvent;
@@ -47,6 +48,7 @@ public class Testmain {
         tiles.setTileAt(new UGTile(1, 0), 1, 0);
         tiles.setTileAt(new UGTile(0, 1), 0, 1);
         tiles.setTileAt(new UGTile(1, 1), 1, 1);
+        ug.keycodeTranslation = new SwingKeycodeTranslation();
 
         frame.setLayout(new BorderLayout());
         ug.display.setRenderDelegate(new UGRenderDelegate() {

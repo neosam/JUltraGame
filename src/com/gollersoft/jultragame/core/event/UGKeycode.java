@@ -8,5 +8,5 @@ package com.gollersoft.jultragame.core.event;
  * To change this template use File | Settings | File Templates.
  */
 public enum UGKeycode {
-    up, down, left, right;
+    none, up, down, left, right;
 }

@@ -3,8 +3,8 @@ package com.gollersoft.jultragame.core;
 import com.gollersoft.jultragame.core.display.UGDisplay;
 import com.gollersoft.jultragame.core.display.UGImage;
 import com.gollersoft.jultragame.core.event.UGKeyboardDelegate;
+import com.gollersoft.jultragame.core.event.UGKeycode;
 import com.gollersoft.jultragame.core.event.UGKeycodeTranslation;
-import com.gollersoft.jultragame.binding.swing.event.SwingKeycodeTranslation;
 import com.gollersoft.jultragame.core.event.UGMouseDelegate;
 
 /**
@@ -18,12 +18,17 @@ abstract public class UG {
     public final UGDisplay display;
     private UGKeyboardDelegate keyboardDelegate;
     private UGMouseDelegate mouseDelegate;
-    public final UGKeycodeTranslation keycodeTranslation;
+    public UGKeycodeTranslation keycodeTranslation;
     public UGStuffDelegate stuffDelegate;
 
     protected UG(UGDisplay display) {
         this.display = display;
-        keycodeTranslation = new SwingKeycodeTranslation();
+        keycodeTranslation = new UGKeycodeTranslation() {
+            @Override
+            public UGKeycode translateKeyCode(int code) {
+               return UGKeycode.none;
+            }
+        };
         stuffDelegate = new UGStuffDelegate() {
             @Override
             public void frame() {
