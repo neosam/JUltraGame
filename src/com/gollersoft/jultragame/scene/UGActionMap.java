@@ -10,10 +10,10 @@ import com.gollersoft.jultragame.core.UGMap;
  * Time: 3:27 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ActionMap implements UGMap<String, Runnable> {
+public class UGActionMap implements UGMap<String, Runnable> {
     private final UGMap<String, Runnable> actionMap;
 
-    public ActionMap(UG ug) {
+    public UGActionMap(UG ug) {
         this.actionMap = ug.createMap();
     }
 
