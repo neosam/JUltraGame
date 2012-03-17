@@ -2,6 +2,7 @@ package com.gollersoft.jultragame.scene;
 
 import com.gollersoft.jultragame.core.UG;
 import com.gollersoft.jultragame.core.UGList;
+import com.gollersoft.jultragame.layer.UGTiles;
 import com.gollersoft.jultragame.sprite.UGSprite;
 
 /**
@@ -11,8 +12,8 @@ import com.gollersoft.jultragame.sprite.UGSprite;
  * Time: 3:23 PM
  * To change this template use File | Settings | File Templates.
  */
-public class UGTilesPool implements UGList<UGSprite> {
-    private final UGList<UGSprite> tilesList;
+public class UGTilesPool implements UGList<UGTiles> {
+    private final UGList<UGTiles> tilesList;
 
     public UGTilesPool(UG ug) {
         this.tilesList = ug.createList();
@@ -24,12 +25,12 @@ public class UGTilesPool implements UGList<UGSprite> {
     }
 
     @Override
-    public void add(UGSprite ugSprite) {
+    public void add(UGTiles ugSprite) {
         tilesList.add(ugSprite);
     }
 
     @Override
-    public UGSprite at(int i) {
+    public UGTiles at(int i) {
         return tilesList.at(i);
     }
 }
