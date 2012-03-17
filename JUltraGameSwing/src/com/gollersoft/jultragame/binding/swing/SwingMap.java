@@ -23,4 +23,10 @@ public class SwingMap<T, O> implements UGMap<T, O> {
     public O get(T o) {
         return aMap.get(o);
     }
+
+    @Override
+    public boolean hasKey(T t) {
+        return aMap.containsKey(t);
+    }
+
 }

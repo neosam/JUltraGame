@@ -27,4 +27,9 @@ public class UGSpriteAnimationStorage implements UGMap<String, UGSpriteAnimation
     public UGSpriteAnimation get(String s) {
         return map.get(s);
     }
+
+    @Override
+    public boolean hasKey(String s) {
+        return map.hasKey(s);
+    }
 }

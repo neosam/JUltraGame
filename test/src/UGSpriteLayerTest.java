@@ -1,4 +1,5 @@
 import com.gollersoft.jultragame.binding.swing.UGSwing;
+import com.gollersoft.jultragame.core.display.UGCamera;
 import com.gollersoft.jultragame.core.display.UGGraphics;
 import com.gollersoft.jultragame.layer.UGSpriteLayer;
 import com.gollersoft.jultragame.sprite.UGSprite;
@@ -18,10 +19,12 @@ import static sun.plugin2.liveconnect.ArgumentHelper.validate;
  */
 public class UGSpriteLayerTest {
     private UGSpriteLayer spriteLayer;
+    private UGCamera camera;
 
     @Before
     public void setUp() throws Exception {
-        spriteLayer = new UGSpriteLayer(new UGSwing(1, 1));
+        camera = new UGCamera();
+        spriteLayer = new UGSpriteLayer(new UGSwing(1, 1), camera);
     }
 
     @After
@@ -37,8 +40,8 @@ public class UGSpriteLayerTest {
         UGGraphics graphics = createMock(UGGraphics.class);
         spriteLayer.add(aSprite);
         spriteLayer.add(bSprite);
-        aSprite.draw(graphics);
-        bSprite.draw(graphics);
+        aSprite.draw(graphics, camera);
+        bSprite.draw(graphics, camera);
         replay(aSprite);
         replay(bSprite);
         spriteLayer.draw(graphics);

@@ -10,4 +10,5 @@ package com.gollersoft.jultragame.core;
 public interface UGMap<T, O> {
     void put(T t, O o);
     O get(T t);
+    boolean hasKey(T t);
 }
