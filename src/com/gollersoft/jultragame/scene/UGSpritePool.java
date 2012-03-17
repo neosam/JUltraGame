@@ -12,10 +12,12 @@ import com.gollersoft.jultragame.sprite.UGSprite;
  * To change this template use File | Settings | File Templates.
  */
 public class UGSpritePool implements UGList<UGSprite> {
-    private final UGList<UGSprite> sprites;
+    private final UGList<UGSpritePoolItem> sprites;
+    private final UG ug;
 
     public UGSpritePool(UG ug) {
         this.sprites = ug.createList();
+        this.ug = ug;
     }
 
     @Override
@@ -25,12 +27,12 @@ public class UGSpritePool implements UGList<UGSprite> {
 
     @Override
     public void add(UGSprite ugSprite) {
-        sprites.add(ugSprite);
+        sprites.add(new UGSpritePoolItem(ug, ugSprite));
     }
 
     @Override
     public UGSprite at(int i) {
-        return sprites.at(i);
+        return sprites.at(i).getSprite();
     }
 
     public void frame() {
