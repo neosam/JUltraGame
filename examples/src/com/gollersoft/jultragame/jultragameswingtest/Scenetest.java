@@ -8,7 +8,9 @@ import com.gollersoft.jultragame.core.display.UGImage;
 import com.gollersoft.jultragame.layer.UGImageScrollLayer;
 import com.gollersoft.jultragame.layer.UGLayer;
 import com.gollersoft.jultragame.layer.UGSpriteLayer;
+import com.gollersoft.jultragame.scene.UGGravityAddon;
 import com.gollersoft.jultragame.scene.UGScene;
+import com.gollersoft.jultragame.scene.UGSceneAddon;
 import com.gollersoft.jultragame.sprite.UGSprite;
 import com.gollersoft.jultragame.sprite.UGSpriteAnimation;
 import com.gollersoft.jultragame.sprite.UGSpriteAnimationStorage;
@@ -35,12 +37,10 @@ public class Scenetest {
         UGSpriteLayer spriteLayer = new UGSpriteLayer(ug, camera);
         spriteLayer.add(sprite);
         scene.addLayer(spriteLayer);
-        scene.registerPerFrameAction(new Runnable() {
-            @Override
-            public void run() {
-                scene.getCamera().y--;
-            }
-        });
+        scene.registerSprite(sprite);
+        scene.getSpritePool().getSpritePoolItem(sprite).getLabels().add("gravity");
+        UGSceneAddon gravityAddon = new UGGravityAddon();
+        gravityAddon.register(scene);
 
 
         JFrame frame = new JFrame("UG Scenetest");
