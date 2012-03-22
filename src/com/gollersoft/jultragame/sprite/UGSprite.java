@@ -24,6 +24,7 @@ public class UGSprite {
         this.animationStorage = animationStorage;
         this.graphics = graphics;
         currentAnimation = animationStorage.get("default");
+        pos = new UGPoint(0, 0);
     }
 
     public void step() {
