@@ -110,4 +110,8 @@ public class UGScene {
         for (int i = 0; i < perFrameAction.size(); i++)
             perFrameAction.at(i).run();
     }
+
+    public UG getUg() {
+        return ug;
+    }
 }

@@ -1,12 +1,9 @@
 package com.gollersoft.jultragame.jultragameswingtest;
 
 import com.gollersoft.jultragame.binding.swing.UGSwing;
-import com.gollersoft.jultragame.core.UG;
 import com.gollersoft.jultragame.core.UGFinalRect;
 import com.gollersoft.jultragame.core.display.UGCamera;
 import com.gollersoft.jultragame.core.display.UGImage;
-import com.gollersoft.jultragame.layer.UGImageScrollLayer;
-import com.gollersoft.jultragame.layer.UGLayer;
 import com.gollersoft.jultragame.layer.UGSpriteLayer;
 import com.gollersoft.jultragame.scene.UGGravityAddon;
 import com.gollersoft.jultragame.scene.UGScene;
@@ -39,7 +36,7 @@ public class Scenetest {
         scene.addLayer(spriteLayer);
         scene.registerSprite(sprite);
         scene.getSpritePool().getSpritePoolItem(sprite).getLabels().add("gravity");
-        UGSceneAddon gravityAddon = new UGGravityAddon();
+        UGSceneAddon gravityAddon = new UGGravityAddon(ug);
         gravityAddon.register(scene);
 
 

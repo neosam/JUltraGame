@@ -1,5 +1,6 @@
 package com.gollersoft.jultragame.scene;
 
+import com.gollersoft.jultragame.core.UG;
 import com.gollersoft.jultragame.core.UGList;
 
 /**
@@ -10,6 +11,14 @@ import com.gollersoft.jultragame.core.UGList;
  * To change this template use File | Settings | File Templates.
  */
 public class UGGravityAddon extends UGSceneAddon {
+    private double acceleration = 2.0;
+    private final UG ug;
+
+    public UGGravityAddon(UG ug) {
+        this.ug = ug;
+    }
+
+
     @Override
     public void register(final UGScene scene) {
         scene.registerPerFrameAction(new Runnable() {
@@ -24,11 +33,14 @@ public class UGGravityAddon extends UGSceneAddon {
 
     @Override
     public UGList getAttributes() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        final UGList<UGSceneAttribute> res = ug.createList();
+        res.add(new UGSceneAttribute("acceleration", "double", true, true));
+        return res;
     }
 
     @Override
     public void setAttribute(String attribute, Object value) {
-        //To change body of implemented methods use File | Settings | File Templates.
+        if (attribute.equals("acceleration"))
+            acceleration = (Double) value;
     }
 }
