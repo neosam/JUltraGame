@@ -10,10 +10,14 @@ package com.gollersoft.jultragame.scene;
 public class UGSceneAttribute {
     public final String name;
     public final String type;
+    public final boolean setable;
+    public final boolean getable;
 
 
-    public UGSceneAttribute(String name, String type) {
+    public UGSceneAttribute(String name, String type, boolean setable, boolean getable) {
         this.name = name;
         this.type = type;
+        this.setable = setable;
+        this.getable = getable;
     }
 }
