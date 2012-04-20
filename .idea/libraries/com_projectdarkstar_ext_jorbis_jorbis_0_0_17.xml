@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="com.projectdarkstar.ext.jorbis:jorbis:0.0.17" type="repository">
+    <properties maven-id="com.projectdarkstar.ext.jorbis:jorbis:0.0.17" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/jorbis-0.0.17.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

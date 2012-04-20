@@ -8,6 +8,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="JUltraGame" />
+    <orderEntry type="library" name="com.projectdarkstar.ext.jorbis:jorbis:0.0.17" level="project" />
+    <orderEntry type="library" name="com.jme3:j-ogg-vorbisd:3.0.0-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="SoundSystem" level="project" />
   </component>
 </module>
 

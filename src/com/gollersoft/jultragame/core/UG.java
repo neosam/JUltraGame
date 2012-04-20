@@ -48,4 +48,6 @@ abstract public class UG {
     public abstract UGImage getImage(String path);
     public abstract UGMap createMap();
     public abstract UGList createList();
+    public abstract void playMusic(String filename);
+    public abstract void playSoundfile(String filename);
 }
