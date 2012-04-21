@@ -12,7 +12,7 @@ import java.awt.*;
  * To change this template use File | Settings | File Templates.
  */
 public class SwingImage implements UGImage {
-    final Image image;
+    public final Image image;
 
     public SwingImage(Image image) {
         this.image = image;
