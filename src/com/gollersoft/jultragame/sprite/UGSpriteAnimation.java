@@ -41,6 +41,7 @@ public class UGSpriteAnimation {
                 counter = 0;
                 x += offset + begin.width;
             }
+            counter = 0;
         }
     }
 
