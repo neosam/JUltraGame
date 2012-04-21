@@ -22,13 +22,13 @@ public class SwingGraphics implements UGGraphics {
 
     @Override
     public void drawRect(int x, int y, int width, int height, UGColor color) {
-        g.setColor(new Color(color.r, color.b, color.b));
+        g.setColor(new Color(color.r, color.g, color.b));
         g.drawRect(x, y, width, height);
     }
 
     @Override
     public void fillRect(int x, int y, int width, int height, UGColor color) {
-        g.setColor(new Color(color.r, color.b, color.b));
+        g.setColor(new Color(color.r, color.g, color.b));
         g.fillRect(x, y, width, height);
     }
 
@@ -41,5 +41,23 @@ public class SwingGraphics implements UGGraphics {
     public void drawImage(UGImage image, int x, int y, int xBegin, int yBegin, int width, int height) {
         g.drawImage(((SwingImage)image).image, x, y, x + width, y + height,
                 xBegin, yBegin, xBegin + width, yBegin + height, null);
+    }
+
+    @Override
+    public void drawString(String text, int x, int y, UGColor color) {
+        g.setColor(new Color(color.r, color.g, color.b, color.a));
+        g.drawString(text, x, y);
+    }
+
+    @Override
+    public void drawCircle(int x, int y, int radius, UGColor color) {
+        g.setColor(new Color(color.r, color.g, color.b));
+        g.drawOval(x - radius, y - radius, radius << 1, radius << 1);
+    }
+
+    @Override
+    public void fillCircle(int x, int y, int radius, UGColor color) {
+        g.setColor(new Color(color.r, color.g, color.b, color.a));
+        g.fillOval(x - radius, y - radius, radius << 1, radius << 1);
     }
 }
