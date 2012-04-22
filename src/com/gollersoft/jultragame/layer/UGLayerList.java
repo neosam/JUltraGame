@@ -33,6 +33,11 @@ public class UGLayerList implements UGList<UGLayer>, UGLayer {
         return layers.at(i);
     }
 
+    @Override
+    public void remove(UGLayer ugLayer) {
+        layers.remove(ugLayer);
+    }
+
     public void draw(UGGraphics g) {
         for (int i = 0; i < layers.size(); i++)
             layers.at(i).draw(g);

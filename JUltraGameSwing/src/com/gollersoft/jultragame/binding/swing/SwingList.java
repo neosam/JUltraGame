@@ -29,4 +29,9 @@ public class SwingList<T> implements UGList<T> {
     public T at(int i) {
         return list.get(i);
     }
+
+    @Override
+    public void remove(T t) {
+        list.remove(t);
+    }
 }

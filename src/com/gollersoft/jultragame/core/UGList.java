@@ -11,4 +11,5 @@ public interface UGList<T> {
     public int size();
     public void add(T t);
     public T at(int i);
+    public void remove(T t);
 }

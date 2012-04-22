@@ -51,6 +51,11 @@ public class UGSpriteLayer implements UGLayer, UGList<UGSprite> {
         return sprites.at(i);
     }
 
+    @Override
+    public void remove(UGSprite ugSprite) {
+        sprites.remove(ugSprite);
+    }
+
     public UGSprite atPixelPosition(int x, int y) {
         for (int i = 0; i < size(); i++) {
             final UGSprite sprite = sprites.at(i);

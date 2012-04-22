@@ -35,6 +35,11 @@ public class UGSpritePool implements UGList<UGSprite> {
         return sprites.at(i).getSprite();
     }
 
+    @Override
+    public void remove(UGSprite ugSprite) {
+        sprites.remove(getSpritePoolItem(ugSprite));
+    }
+
     public UGSpritePoolItem getSpritePoolItemAt(int i) {
         return sprites.at(i);
     }

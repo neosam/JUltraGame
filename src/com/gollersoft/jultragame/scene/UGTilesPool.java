@@ -33,4 +33,9 @@ public class UGTilesPool implements UGList<UGTiles> {
     public UGTiles at(int i) {
         return tilesList.at(i);
     }
+
+    @Override
+    public void remove(UGTiles ugTiles) {
+        tilesList.remove(ugTiles);
+    }
 }
