@@ -52,7 +52,7 @@ public class UGSpritePool implements UGList<UGSprite> {
         for (int i = 0; i < sprites.size(); i++) {
             final UGSpritePoolItem item = sprites.at(i);
             for (int j = 0; j < item.getLabels().size(); j++) {
-                if (item.getLabels().at(i).equals(label)) {
+                if (item.getLabels().at(j).equals(label)) {
                     spriteList.add(item);
                     break;
                 }
