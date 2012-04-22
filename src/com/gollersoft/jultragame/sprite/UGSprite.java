@@ -56,4 +56,8 @@ public class UGSprite {
 
         return new UGFinalRect(pos.x, pos.y, size.width, size.height);
     }
+
+    public UGSpriteAnimationStorage getAnimationStorage() {
+        return animationStorage;
+    }
 }
