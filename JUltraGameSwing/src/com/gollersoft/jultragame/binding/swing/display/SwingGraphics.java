@@ -22,13 +22,13 @@ public class SwingGraphics implements UGGraphics {
 
     @Override
     public void drawRect(int x, int y, int width, int height, UGColor color) {
-        g.setColor(new Color(color.r, color.g, color.b));
+        g.setColor(new Color(color.r, color.g, color.b, color.a));
         g.drawRect(x, y, width, height);
     }
 
     @Override
     public void fillRect(int x, int y, int width, int height, UGColor color) {
-        g.setColor(new Color(color.r, color.g, color.b));
+        g.setColor(new Color(color.r, color.g, color.b, color.a));
         g.fillRect(x, y, width, height);
     }
 
