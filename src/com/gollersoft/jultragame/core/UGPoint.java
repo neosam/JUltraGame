@@ -17,4 +17,12 @@ public class UGPoint {
 
     public UGPoint() {
     }
+
+    @Override
+    public String toString() {
+        return "UGPoint{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
+    }
 }
